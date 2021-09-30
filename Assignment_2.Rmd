@@ -1,0 +1,42 @@
+---
+title: "**my first R markdown**"
+author: "HAONAN LI"
+date: "*2021/9/30*"
+output:
+  word_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+Ozone <- c(41,36,12,18,NA,28)
+Solar.R <- c(190,118,149,313,NA,NA)
+Wind <- c(7.4,8.0,12.6,11.5,14.3,14.9)
+Temp <- c(67,72,74,62,56,66)
+Month <- c(5,5,5,5,5,5)
+Day <- c(1,2,3,4,5,6)
+mydata <- data.frame(Ozone,Solar.R,Wind,Temp,Month,Day)
+mydata
+newdata <- na.omit(mydata)
+newdata
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r airquality, echo=FALSE}
+attach(newdata)
+plot(Ozone,Temp)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
